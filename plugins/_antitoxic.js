@@ -1,4 +1,4 @@
-const toxicRegex = /زب|سكس|طيز|كس|خول|عرص|متناك|xnxx|xxx|عرص/i;
+const toxicRegex = /زب|سكس|طيز|كس|كسمك|عرص|متناك|xnxx|xxx|عرص/i;
 
 export async function before(m, { isAdmin, isBotAdmin, isOwner }) {
     if (m.isBaileys && m.fromMe) {
