@@ -12,7 +12,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
   try {
     m.react(rwait)
     const { key } = await conn.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/abafb0983183373f95cf4.png' },
+      image: { url: 'https://telegra.ph/file/7daad4098ab7cc85eaec8.jpg' },
       caption: 'ثانيه افكر....⚡'
     }, { quoted: m });
     conn.sendPresenceUpdate('composing', m.chat);
@@ -26,7 +26,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
     let response = await fetch(guru2);
     let data = await response.json();
     let result = data.completion;
-    let yourName = '𝐵𝑌:𝑍𝑂𝑅𝑂⚡𝐵𝑂𝑇'; // قم بتعيين اسمك هنا
+    let yourName = ''; // قم بتعيين اسمك هنا
 
     await conn.relayMessage(m.chat, {
       protocolMessage: {
