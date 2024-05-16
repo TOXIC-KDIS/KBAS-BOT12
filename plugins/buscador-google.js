@@ -5,7 +5,7 @@ import axios from 'axios';
 let handler = async (m, { conn, command, args, usedPrefix }) => {
   const fetch = (await import('node-fetch')).default;
   const text = args.join` `;
-  if (!text) return conn.reply(m.chat, '*[❗𝐈𝐍𝐅𝐎❗] أدخل نصًا للبحث، مثال: ' + usedPrefix + command + ' TheMystic-Bot-MD*', m);
+  if (!text) return conn.reply(m.chat, '*[❗𝐈𝐍𝐅𝐎❗] أدخل نصًا للبحث، مثال: ' + usedPrefix + command + ' -Bot-MD*', m);
 
   const url = 'https://google.com/search?q=' + encodeURIComponent(text);
   
