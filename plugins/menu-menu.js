@@ -21,13 +21,12 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
     const doc = ['pdf', 'zip', 'vnd.openxmlformats-officedocument.presentationml.presentation', 'vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'vnd.openxmlformats-officedocument.wordprocessingml.document'];
     const document = doc[Math.floor(Math.random() * doc.length)];
-    const str = ` *🤖 The Zoro Bot* 🤖
+    const str = ` *🤖 بوت نسيانن١* 🤖
 
- *👋 اهلا يحب, ${taguser}*
+ *👋 اهلا, ${taguser}*
 
- *🧑‍💻 المالك.:* Yosef (Zoro)
- *📱 wa:* +201032389641
- *🏦 PayPal:* paypal.me/Yosef160
+ *🧑‍💻 المالك.:* نسيانن١
+ *📱 wa:* +967773289295
 
 
  *📆 التاريخ:* ${date}
