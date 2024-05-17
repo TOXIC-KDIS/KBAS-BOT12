@@ -87,14 +87,14 @@ global.año = d.toLocaleDateString('ar', {year: 'numeric'});
 global.tiempo = d.toLocaleString('ar-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
 global.wm2 = `▸ ${dia} ${fecha}\n▸ 𝐵𝑌:𝑍𝑂𝑅𝑂⚡𝐵𝑂𝑇`;
-global.gt = '𝐵𝑌:𝑍𝑂𝑅𝑂⚡𝐵𝑂𝑇';
-global.mysticbot = '𝐵𝑌:𝑍𝑂𝑅𝑂⚡𝐵𝑂𝑇';
+global.gt = '𝐵𝑌:نسيانن١⚡𝐵𝑂𝑇';
+global.mysticbot = '𝐵𝑌:نسيانن١⚡𝐵𝑂𝑇';
 global.md = 'https://solo.to/yosef.zoro';
 global.mysticbot = 'https://solo.to/yosef.zoro';
 global.waitt = '*⌛ _جاري التحميل..._ ▬▬▭▭▭*';
 global.waittt = '*⌛ _جاري التحميل..._ ▬▬▬▬▭▭*';
 global.waitttt = '*⌛ _جاري التحميل..._ ▬▬▬▬▬▬▭*';
-global.nomorown = '201032389641';
+global.nomorown = '967773289295';
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 global.cmenut = '❖––––––『';
 global.cmenub = '┊✦ ';
