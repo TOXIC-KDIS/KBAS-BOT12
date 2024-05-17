@@ -52,7 +52,7 @@ global.thumb = fs.readFileSync('./Menu2.jpg')
 
 
 global.packname = '𝐵𝑌:نسيانن١⚡𝐵𝑂𝑇';
-global.author = 'بوت⚡نسيانن١';
+global.author = 'بوت⚡';
 global.wm = 'نسيانن١ - 𝐵𝑂𝑇';
 global.titulowm = 'نسيانن١ - 𝐵𝑂𝑇';
 global.titulowm2 = `نسيانن١ - 𝐵𝑂𝑇`
