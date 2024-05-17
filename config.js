@@ -86,7 +86,7 @@ global.mes = d.toLocaleDateString('ar', {month: 'long'});
 global.año = d.toLocaleDateString('ar', {year: 'numeric'});
 global.tiempo = d.toLocaleString('ar-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
-global.wm2 = `▸ ${dia} ${fecha}\n▸ 𝐵𝑌:𝑍𝑂𝑅𝑂⚡𝐵𝑂𝑇`;
+global.wm2 = `▸ ${dia} ${fecha}\n▸ 𝐵𝑌:نسيانن١⚡𝐵𝑂𝑇`;
 global.gt = '𝐵𝑌:نسيانن١⚡𝐵𝑂𝑇';
 global.mysticbot = '𝐵𝑌:نسيانن١⚡𝐵𝑂𝑇';
 global.md = 'https://solo.to/yosef.zoro';
