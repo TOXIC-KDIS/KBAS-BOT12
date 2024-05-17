@@ -39,7 +39,7 @@ global.prems = ['967773289295'];
 
 global.lenguajeGB = ar  //Idioma de The-LoliBot-MD, Ejemplo: es | en | pt...
 // Sticker WM
-global.botname = '𝒁𝑶𝑹𝑶'
+global.botname = 'نسيانن١'
 global.premium = 'true'
 global.menuvid = 'https://i.imgur.com/uiwALih.mp4'
 global.igfg = 'https://solo.to/yosef.zoro' 
