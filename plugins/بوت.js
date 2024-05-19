@@ -41,5 +41,5 @@ loading()
 };
 handler.help = [ love ];
 handler.tags = [ fun ];
-handler.command = /^(بووت)$/i;
+handler.command = /^(بوته)$/i;
 export default handler;
