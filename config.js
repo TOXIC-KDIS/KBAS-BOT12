@@ -54,7 +54,6 @@ global.thumb = fs.readFileSync('./Menu2.jpg')
 global.packname = '𝐵𝑂𝑇';
 global.author = '𝐵𝑂𝑇⚡نسيانن١';
 global.wm = 'نسيانن١ - 𝐵𝑂𝑇';
-global.vs =  V2 • 1.0.5 :
 global.titulowm = 'نسيانن١ - 𝐵𝑂𝑇';
 global.titulowm2 = `نسيانن١ - 𝐵𝑂𝑇`
 global.igfg = 'نسيانن١ - 𝐵𝑂𝑇';
