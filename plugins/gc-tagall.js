@@ -1,17 +1,19 @@
-let handler = async (m, { conn, text, participants, isAdmin, isOwner, groupMetadata }) => {
-  let users = participants.map(u => u.id).filter(v => v !== conn.user.jid)
-  m.reply(`❏ مجموعة : *${groupMetadata.subject}*\n❏ أعضاء : *${participants.length}*${text ? `\n❐ رسالة : ${text}\n` : ''}\n*✦━━━━━━[ 𝑍𝑂𝑅𝑂 ]━━━━━━✦*
-*⤹⚜⊰⚡⊱⚜⤸* ياخي اي الملل دا 😐🙂
-*✦━━─━━━⌠🐉⌡━━━─━━✦*
-*⤹⚜ المنشن ⊰⚡⊱ الجماعي ⚜⤸*\n` + users.map(v => '│◦❈↲ تفاعل @' + v.replace(/@.+/, '')).join`\n` + '\n*✦━━━━━━[ 𝑍𝑂𝑅𝑂 ]━━━━━━✦*', null, {
-      mentions: users
-  })
+let handler = async(m, { isOwner, isAdmin, conn, text, participants, args, command }) => {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
 }
-
-handler.help = ['tagall']
+let pesan = args.join` `
+let oi = `*📩┇الـرسـالـه :* ${pesan}`
+let teks = `*『👑┇مـنـشـن جـمـاعـي』* \n\n ${oi}\n\n*👑┇مـلـوكـنـا :⇣*\n`
+for (let mem of participants) {
+teks += `*👑╎↫* @${mem.id.split('@')[0]}\n`}
+teks += `*『👑┇𝙻𝙴𝚅𝙸┇🤖┇𝙱𝙾𝚃┇👑』*\n\n*▌│█║▌║▌║║▌║▌║▌║█*`
+conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, )
+}
+handler.help = ['tagall <mesaje>','invocar <mesaje>']
 handler.tags = ['group']
-handler.command = ['منشن']
-handler.admin = true
+handler.command = /^(منشن|invocar|invocacion|todos|invocación)$/i
 handler.group = true
-
+handler.admin = true
 export default handler
