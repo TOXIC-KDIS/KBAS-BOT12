@@ -1,7 +1,9 @@
 import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
 import yts from 'yt-search'
 var handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `*تحميل الاغاني من يوتوب*`
+  if (!text) throw `*「🚀」 ايـن اسـم الاغـنـيـة
+ ~⬤⚡╎مـثـال ↧~
+ *.اغنية* مروان بابلو غابه*`
   await m.reply(wait)
   let search = await yts(text)
   let vid = search.videos[Math.floor(Math.random() * search.videos.length)]
