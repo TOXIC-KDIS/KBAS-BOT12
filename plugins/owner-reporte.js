@@ -9,5 +9,5 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
 };
 handler.help = ['reporte', 'request'].map((v) => v + ' <teks>');
 handler.tags = ['info'];
-handler.command = /^(report|request|reporte|bugs|bug|report-owner|reportes)$/i;
+handler.command = /^(report|ابلاغ|reporte|bugs|bug|report-owner|reportes)$/i;
 export default handler;
