@@ -12,7 +12,7 @@ let text
         text = args.slice(0).join(" ")
     } else if (m.quoted && m.quoted.text) {
         text = m.quoted.text
-    } else throw "مثال \n .ايتاشي بوت ايتاشي"
+    } else throw "مثال \n .زورو بوت زورو"
    if (!text) return m.reply('𝙏𝙀𝙓𝙏E?')
    if (text.length > 30) return m.reply('𝙈𝘼𝙓𝙄𝙈UN 30 𝙋!')
     let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/3387ec330bbd16d82195e.jpg')
@@ -50,6 +50,6 @@ let text
 
 handler.help = ['qc']
 handler.tags = ['sticker']
-handler.command = /^(شادو)$/i
+handler.command = /^(زو)$/i
 
 export default handler
