@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 var handler = async (m, { text, usedPrefix, command }) => {
-  if (!text) throw `قول اي حاجه!`;
+  if (!text) throw ` قول احا!`;
 
   try {
     m.react('⚡');
