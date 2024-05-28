@@ -14,5 +14,5 @@ const handler = async (m, {
 };
 handler.help = ['ppcouple'];
 handler.tags = ['internet'];
-handler.command = /^(ppcp|ppcouple)$/i;
+handler.command = /^(ppcp|انمي3)$/i;
 export default handler;

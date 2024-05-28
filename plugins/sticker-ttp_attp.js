@@ -2,44 +2,44 @@ import fetch from 'node-fetch';
 import {sticker, addExif} from '../lib/sticker.js';
 import {Sticker} from 'wa-sticker-formatter';
 const handler = async (m, {conn, text, args, usedPrefix, command}) => {
-  if (!text) throw `*[❗] يرجى إدخال نص لتحويله إلى صورة متحركة*\n\n*—◉ المثال:*\n*◉ ${usedPrefix + command} Zoro-Bot*`;
+  if (!text) throw `*[❗] اكتب الامر ثم اسمك بـ الغه الانجليزي*\n\n*—◉ كمثال:*\n*◉ ${usedPrefix + command} ALOUSH-Bot*`;
   const teks = encodeURI(text);
 
-  if (command == 'attp') {
+  if (command == 'غماز1') {
     const a1 = await (await fetch(`https://api.erdwpe.com/api/maker/attp?text=${teks}`)).buffer();
     const a2 = await createSticker(a1, false, global.packname, global.author);
     conn.sendFile(m.chat, a2, 'sticker.webp', '', m, {asSticker: true});
   }
 
-  if (command == 'attp2') {
+  if (command == 'غماز2') {
     conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, {asSticker: true});
   }
 
-  if (command == 'attp3') {
+  if (command == 'غماز3') {
     conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp2?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, {asSticker: true});
   }
 
-  if (command == 'ttp5') {
+  if (command == 'غماز4') {
     conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp6?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, {asSticker: true});
   }
 
-  if (command == 'ttp4') {
+  if (command == 'غماز5') {
     conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp5?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, {asSticker: true});
   }
 
-  if (command == 'ttp3') {
+  if (command == 'غماز6') {
     conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp3?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, {asSticker: true});
   }
 
-  if (command == 'ttp2') {
+  if (command == 'غماز7') {
     conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp2?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, {asSticker: true});
   }
 
-  if (command == 'ttp') {
+  if (command == 'غماز3') {
     conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, {asSticker: true});
   }
 };
-handler.command = handler.help = ['ttp', 'ttp2', 'ttp3', 'ttp4', 'ttp5', 'attp', 'attp2', 'attp3'];
+handler.command = handler.help = ['غماز7', 'غماز6', 'غماز5', 'غماز4', 'غماز3', 'غماز2', 'غماز1', 'غماز'];
 handler.tags = ['sticker'];
 export default handler;
 
