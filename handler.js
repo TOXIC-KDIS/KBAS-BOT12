@@ -1181,7 +1181,7 @@ export async function handler(chatUpdate) {
 const messageText = `❰ ⚠️ ❱ *¡المستخدم محظور!* ❰ ⚠️ ❱\n
  ▢ *تحذير:* ${messageNumber}/3
  ${user.bannedReason ? `\n▢ *Motivo:* ${user.bannedReason}` : ' ▢ *السبب:* غير محدد'}
- *[ ℹ️ ] *إذا كنت تعتقد أن هذا خطأ ولديك دليل، يمكنك التواصل مع مالك البوت للاستئناف. معلومات الاتصال للاستئناف:* wa.me/201032389641*`.trim();
+ *[ ℹ️ ] *إذا كنت تعتقد أن هذا خطأ ولديك دليل، يمكنك التواصل مع مالك البوت للاستئناف. معلومات الاتصال للاستئناف:* wa.me/967773289295*`.trim();
               m.reply(messageText);
               user.bannedMessageCount++;
             } else if (user.bannedMessageCount === 3) {
@@ -1547,7 +1547,7 @@ export async function callUpdate(callUpdate) {
         const callmsg = await mconn.conn.reply(nk.from, `اهلا *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'videollamadas' : 'llamadas'} غير مسموح به، سيتم حظرك.\n-\nإذا اتصلت عن طريق الخطأ، فاتصل بمنشئي لإلغاء حظرك!`, false, {mentions: [nk.from]});
         // let data = global.owner.filter(([id, isCreator]) => id && isCreator)
         // await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
-        const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;𝑍𝑂𝑅𝑂⚡3𝑀𝐾;;;\nFN:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nORG:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nTITLE:\nitem1.TEL;waid=201032389641:+201032389641\nitem1.X-ABLabel:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nX-WA-BIZ-DESCRIPTION:[❗] اتصل بهذا الرقم لأمور هامة.\nX-WA-BIZ-NAME:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nEND:VCARD`;
+        const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;𝑍𝑂𝑅𝑂⚡3𝑀𝐾;;;\nFN:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nORG:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nTITLE:\nitem1.TEL;waid=967773289295:+967773289295\nitem1.X-ABLabel:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nX-WA-BIZ-DESCRIPTION:[❗] اتصل بهذا الرقم لأمور هامة.\nX-WA-BIZ-NAME:𝑍𝑂𝑅𝑂⚡3𝑀𝐾\nEND:VCARD`;
         await mconn.conn.sendMessage(nk.from, {contacts: {displayName: '𝑍𝑂𝑅𝑂⚡3𝑀𝐾', contacts: [{vcard}]}}, {quoted: callmsg});
         await mconn.conn.updateBlockStatus(nk.from, 'block');
       }
@@ -1598,16 +1598,16 @@ global.dfail = (type, m, conn) => {
     };
 
     const msg = {
-        owner: `*★『${emoji.owner} امـر خـاص بـمطور الـبوت فقـط يـ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        moderator: `*★『${emoji.moderator} هـاد الامـر لـ الـمـوديـتـر فـقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        premium: `*★『${emoji.premium} هـاد الامـر للبـريـميـوم فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        group: `*★『${emoji.group} هـاد الامـر يـعمل فقـط فـي المـجموعـات يـ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        private: `*★『${emoji.private} هـاد الامـر خـاص بـ البوت فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        admin: `*★『${emoji.admin} هـاد الامـر خـاص بـ ادمـن المـجمـوعه فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        botAdmin: `*★『${emoji.botAdmin} هـاد الامـر يجـب ان يـكون الـبوت مشـرف فـي المجمـوعه يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        unreg: `*★『${emoji.unreg} يـجـب ان تـكـون مـسـجـل لـي اسـتـعـمـال الامـر لـلـتـسـجـيـل اكـتـب .تسجيل ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        nsfw: `*★『${emoji.nsfw} يـمنع استعـمال الامـر يـ』*\n*لـ دخـول جـروب دعـم الـبوت➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
-        restrict: `*★『${emoji.restrict} تـم تـعـطـيـل الامـر مـن الـمـالـك يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/EiUizazsr6kLCwgfKJ7F5q 』*`,
+        owner: `*★『${emoji.owner} امـر خـاص بـمطور الـبوت فقـط يـ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
+        moderator: `*★『${emoji.moderator} هاذا الامـر لـ الـمـوديـتـر فـقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
+        premium: `*★『${emoji.premium} هاذا الامـر للبـريـميـوم فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
+        group: `*★『${emoji.group} هاذا الامـر يـعمل فقـط فـي المـجموعـات يـ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
+        private: `*★『${emoji.private} هاذا الامـر خـاص بـ البوت فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
+        admin: `*★『${emoji.admin} هاذا الامـر خـاص بـ ادمـن المـجمـوعه فقـط يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
+        botAdmin: `*★『${emoji.botAdmin} هاذا الامـر يجـب ان يـكون الـبوت مشـرف فـي المجمـوعه يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
+        unreg: `*★『${emoji.unreg} يـجـب ان تـكـون مـسـجـل لـي اسـتـعـمـال الامـر لـلـتـسـجـيـل اكـتـب .تسجيل ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
+        nsfw: `*★『${emoji.nsfw} يـمنع استعـمال الامـر يـ』*\n*لـ دخـول جـروب دعـم الـبوت➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
+        restrict: `*★『${emoji.restrict} تـم تـعـطـيـل الامـر مـن الـمـالـك يـ ${userTag}』*\n*لـ دخـول جـروب دعـم الـبوت ➱『 https://chat.whatsapp.com/JRz2Z2IqhfbI10PbPE5Ydq 』*`,
     };
 
     const errorMessage = msg[type];
