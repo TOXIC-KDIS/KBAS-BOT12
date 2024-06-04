@@ -11,7 +11,7 @@ let handler = async (m, {
         text = args.slice(0).join(" ")
     } else if (m.quoted && m.quoted.text) {
         text = m.quoted.text
-    } else throw "الذكاء الاصطناعي اسأله اي سؤال تريده مثال :\n*.ji1z* متى توفي النبي صلى الله عليه وسلم "
+    } else throw "الذكاء الاصطناعي اسأله اي سؤال تريده مثال :\n*.نسيان* متى توفي النبي صلى الله عليه وسلم "
     await m.reply(wait)
     const messages = [
     { role:  system , content:  You are a helpful assistant.  },
@@ -24,7 +24,7 @@ let handler = async (m, {
         await m.reply( error )
     }
 }
-handler.help = ["ji1z"]
+handler.help = ["نسيان"]
 handler.tags = ["ai"];
 handler.command = /^(نسيان)$/i
 
