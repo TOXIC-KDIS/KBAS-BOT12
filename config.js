@@ -1,130 +1,56 @@
-import {watchFile, unwatchFile} from 'fs';
-import chalk from 'chalk';
-import {fileURLToPath} from 'url';
-import fs from 'fs'; 
-import cheerio from 'cheerio';
-import fetch from 'node-fetch';
-import axios from 'axios';
-import moment from 'moment-timezone';
-import { en, es, id, ar, pt } from './lib/idiomas/total-idiomas.js'
-
-global.botnumber = ""
+import { watchFile, unwatchFile } from 'fs'
+import chalk from 'chalk' 
+import { fileURLToPath } from 'url' 
 
 global.owner = [
-  ['967734144053', 'بوت⚡نسيانن', true],
-  ['967734144053', 'بوت⚡نسيانن', true],
-  ['967734144053', 'بوت⚡نسيانن', true],
-  ['967734144053', 'بوت⚡نسيانن', true],
-  ['967773289295', 'بوت⚡نسيانن', true],
-  ['967734144053', 'بوت⚡نسيانن', true],
-  ['967734144053', 'بوت⚡نسيانن', true],
-  ['967734144053', 'بوت⚡نسيانن', false],
-  ['967734144053', 'بوت⚡نسيانن', true],
-  ['967734144053','بوت⚡نسيانن', true],
-  ['967773289295'],
-  ['967773289295'],
-  ['967773289295'],
-  ['967773289295'],
-  ['967773289295'],
-  ['967773289295'],
-  ['967773289295'],
-  ['967773289295'], 
-  ['967773289295'],  
-  ['967773289295'], 
-  ['967773289295']
-];
+  ['https://wa.me/967734144053', 'ڪَباؘسِ丫:١⁶𝑘𝑎𝑝𝑎𝑠', true],
+  ['https://wa.me/967734144053']
+] //Numeros de owner 
 
-global.suittag = ['967734144053'];
-global.prems = ['967734144053'];
+global.mods = [''] 
+global.prems = ['https://wa.me/967734144053', 'https://wa.me/967734144053']
+global.APIs = { // API Prefix
+  // name: 'https://website' 
+  nrtm: 'https://fg-nrtm.ddns.net',
+  fgmods: 'https://api.fgmods.xyz'
+}
+global.APIKeys = { // APIKey Here
+  // 'https://website': 'apikey'
+  'https://api.fgmods.xyz': 'm2XBbNvz' //-- 100 de límite diario --- Regístrese en https://api.fgmods.xyz/
+}
 
-global.lenguajeGB = ar  //Idioma de The-LoliBot-MD, Ejemplo: es | en | pt...
 // Sticker WM
-global.botname = 'نسيانن١'
-global.premium = 'true'
-global.menuvid = 'https://i.imgur.com/uiwALih.mp4'
-global.igfg = 'https://solo.to/yosef.zoro' 
-global.dygp = 'https://solo.to/yosef.zoro'
-global.fgsc = 'https://solo.to/yosef.zoro' 
-global.fgyt = 'https://youtube.com/@The-ZoroBot-MD?si=DncZQM6sKC0F6MhG'
-global.fgpyp = 'https://youtube.com/@The-ZoroBot-MD?si=DncZQM6sKC0F6MhG'
-global.fglog = 'https://solo.to/yosef.zoro' 
-global.thumb = fs.readFileSync('./Menu2.jpg')
+global.packname = '💘' 
+global.author = 'ڪَباؘسِ丫:١⁶𝑘𝑎𝑝𝑎𝑠' 
 
+//--info FG
+global.botName = '丫'
+global.fgig = '*https://www.instagram.com/kbas721?igsh=YzFkOXprbjI5ZDAz*' 
+global.fgsc = 'https://wa.me/967734144053' 
+global.fgyt = 'https://wa.me/967734144053'
+global.fgpyp = 'https://paypal.me/fg98f'
+global.fglog = 'https://i.ibb.co/1zdz2j3/logo.jpgs' 
 
-global.packname = '𝐵𝑂𝑇';
-global.author = '𝐵𝑂𝑇⚡نسيانن١';
-global.wm = 'نسيانن١ - 𝐵𝑂𝑇';
-global.titulowm = 'نسيانن١ - 𝐵𝑂𝑇';
-global.titulowm2 = `نسيانن١ - 𝐵𝑂𝑇`
-global.igfg = 'نسيانن١ - 𝐵𝑂𝑇';
-global.wait = '*[ ⏳ ] انتظر...*';
+//--- Grupos WA
+global.id_canal = '120363160276571146@newsletter' //-ID de canal de WhatsApp
+global.fgcanal = 'https://whatsapp.com/channel/0029VaaLM7m6BIErLz1Xcq3M'
+global.bgp = 'https://whatsapp.com/channel/0029VaaLM7m6BIErLz1Xcq3M'
+global.bgp2 = 'https://whatsapp.com/channel/0029VaaLM7m6BIErLz1Xcq3M'
+global.bgp3 = '' //--GP NSFW
 
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ رياكت
-global.wait = '*⌛ _انتظر..._*\n*▰▰▰▱▱▱▱▱*'
+global.wait = '⌛ _Cargando..._\n*▬▬▬▭*'
 global.rwait = '⌛'
-global.dmoji = '⚡'
+global.dmoji = '🤭'
 global.done = '✅'
 global.error = '❌' 
 global.xmoji = '🔥' 
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ رياكت
 
-global.imagen1 = fs.readFileSync('./Menu2.jpg');
-global.imagen2 = fs.readFileSync('./src/nuevobot.jpg');
-global.imagen3 = fs.readFileSync('./src/Pre Bot Publi.png');
-global.imagen4 = fs.readFileSync('./Menu.png');
-global.imagen5 = fs.readFileSync('./src/+18.jpg');
-global.imagen6 = fs.readFileSync('./Menu3.png');
+global.multiplier = 69 
+global.maxwarn = '2' // máxima advertencias
 
-global.mods = [];
-
-//* *******Tiempo***************
-global.d = new Date(new Date + 3600000);
-global.locale = 'ar';
-global.dia = d.toLocaleDateString(locale, {weekday: 'long'});
-global.fecha = d.toLocaleDateString('ar', {day: 'numeric', month: 'numeric', year: 'numeric'});
-global.mes = d.toLocaleDateString('ar', {month: 'long'});
-global.año = d.toLocaleDateString('ar', {year: 'numeric'});
-global.tiempo = d.toLocaleString('ar-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
-//* ****************************
-global.wm2 = `▸ ${dia} ${fecha}\n▸ 𝐵𝑌:نسيانن١⚡𝐵𝑂𝑇`;
-global.gt = '𝐵𝑌:نسيانن١⚡𝐵𝑂𝑇';
-global.mysticbot = '𝐵𝑌:نسيانن١⚡𝐵𝑂𝑇';
-global.md = 'https://solo.to/yosef.zoro';
-global.mysticbot = 'https://solo.to/yosef.zoro';
-global.waitt = '*⌛ _جاري التحميل..._ ▬▬▭▭▭*';
-global.waittt = '*⌛ _جاري التحميل..._ ▬▬▬▬▭▭*';
-global.waitttt = '*⌛ _جاري التحميل..._ ▬▬▬▬▬▬▭*';
-global.nomorown = '967773289295';
-global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
-global.cmenut = '❖––––––『';
-global.cmenub = '┊✦ ';
-global.cmenuf = '╰━═┅═━––––––๑\n';
-global.cmenua = '\n⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕\n     ';
-global.dmenut = '*❖─┅──┅〈*';
-global.dmenub = '*┊»*';
-global.dmenub2 = '*┊*';
-global.dmenuf = '*╰┅────────┅✦*';
-global.htjava = '⫹⫺';
-global.htki = '*⭑•̩̩͙⊱•••• ☪*';
-global.htka = '*☪ ••••̩̩͙⊰•⭑*';
-global.comienzo = '• • ◕◕════';
-global.fin = '════◕◕ • •';
-global.botdate = `*[ 📅 ] Fecha:*  ${moment.tz('America/Mexico_City').format('DD/MM/YY')}`;
-global.bottime = `*[ ⏳ ] Hora:* ${moment.tz('America/Mexico_City').format('HH:mm:ss')}`;
-global.fgif = {key: {participant: '0@s.whatsapp.net'}, message: {'videoMessage': {'title': wm, 'h': `Hmm`, 'seconds': '999999999', 'gifPlayback': 'true', 'caption': bottime, 'jpegThumbnail': fs.readFileSync('./Menu.png')}}};
-global.multiplier = 99;
-global.flaaa = [
-  'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
-  'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=',
-  'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=',
-  'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=',
-  'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text=',
-];
-//* ************************
-
-const file = fileURLToPath(import.meta.url);
+let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
-  unwatchFile(file);
-  console.log(chalk.redBright('Update \'config.js\''));
-  import(`${file}?update=${Date.now()}`);
-});
+  unwatchFile(file)
+  console.log(chalk.redBright("Update 'config.js'"))
+  import(`${file}?update=${Date.now()}`)
+})
