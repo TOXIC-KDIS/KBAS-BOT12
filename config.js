@@ -34,8 +34,8 @@ global.owner = [
   ['967773289295']
 ];
 
-global.suittag = ['967773289295'];
-global.prems = ['967773289295'];
+global.suittag = ['967734144053'];
+global.prems = ['967734144053'];
 
 global.lenguajeGB = ar  //Idioma de The-LoliBot-MD, Ejemplo: es | en | pt...
 // Sticker WM
